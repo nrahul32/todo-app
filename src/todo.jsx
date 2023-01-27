@@ -4,7 +4,9 @@ class Todo extends Component {
     render() {
         return (
             <div>
-                Todo Item1
+                {this.props.todo.task}
+                <span>  </span>
+                <span>X</span>
             </div>
         )
     }

@@ -4,12 +4,26 @@ import AddTodo from "./add-todo";
 import TodoList from "./todo-list";
 
 class TodoApp extends Component {
+
+    state = {
+        todos: [
+            {
+                id: 1,
+                task: "This is a sample todo item"
+            },
+            {
+                id: 2,
+                task: "Click on X to delete any item"
+            },
+        ]
+    }
+
     render() {
         return (
             <div>
                 <Title />
                 <AddTodo />
-                <TodoList />
+                <TodoList todos={this.state.todos}/>
             </div>
         )
     }
