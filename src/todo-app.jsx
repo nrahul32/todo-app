@@ -18,11 +18,20 @@ class TodoApp extends Component {
         ]
     }
 
+    addTodo = (newTodo) => {
+        let existingTodos = this.state.todos;
+        existingTodos.push({
+            id: this.state.todos.length + 1,
+            task: newTodo
+        })
+        this.setState({existingTodos})
+    }
+
     render() {
         return (
             <div>
                 <Title />
-                <AddTodo />
+                <AddTodo handleAdd={this.addTodo}/>
                 <TodoList todos={this.state.todos}/>
             </div>
         )

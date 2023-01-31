@@ -13,7 +13,12 @@ class AddTodo extends Component {
     }
 
     handleSubmit = (event) => {
-        alert("State: " + this.state.todo);
+        this.props.handleAdd(this.state.todo);
+
+        // clearing the input field/state after adding
+        this.setState({
+            todo: ''
+        })
     }
 
     render() {
