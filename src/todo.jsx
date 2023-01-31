@@ -1,12 +1,17 @@
 import React, { Component } from "react";
 
 class Todo extends Component {
+
+    handleDelete = () => {
+        this.props.handleDelete(this.props.todo.id);
+    }
+
     render() {
         return (
             <div>
                 {this.props.todo.task}
                 <span>  </span>
-                <span>X</span>
+                <button onClick={this.handleDelete}>X</button>
             </div>
         )
     }

@@ -6,7 +6,7 @@ class TodoList extends Component {
         return (
             this.props.todos.map(todo => {
                 return (<div>
-                    <Todo todo={todo} />
+                    <Todo todo={todo} handleDelete={this.props.handleDelete} />
                 </div>)
             })
         )

@@ -24,15 +24,19 @@ class TodoApp extends Component {
             id: this.state.todos.length + 1,
             task: newTodo
         })
-        this.setState({existingTodos})
+        this.setState({ existingTodos })
+    }
+
+    removeTodo = (id) => {
+        this.setState({ todos: this.state.todos.filter((todo) => todo.id != id) })
     }
 
     render() {
         return (
             <div>
                 <Title />
-                <AddTodo handleAdd={this.addTodo}/>
-                <TodoList todos={this.state.todos}/>
+                <AddTodo handleAdd={this.addTodo} />
+                <TodoList todos={this.state.todos} handleDelete={this.removeTodo} />
             </div>
         )
     }
