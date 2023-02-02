@@ -21,14 +21,14 @@ class TodoApp extends Component {
     addTodo = (newTodo) => {
         let existingTodos = this.state.todos;
         existingTodos.push({
-            id: this.state.todos.length + 1,
+            id: Date.now(),
             task: newTodo
         })
         this.setState({ existingTodos })
     }
 
     removeTodo = (id) => {
-        this.setState({ todos: this.state.todos.filter((todo) => todo.id != id) })
+        this.setState({ todos: this.state.todos.filter((todo) => todo.id !== id) })
     }
 
     render() {
